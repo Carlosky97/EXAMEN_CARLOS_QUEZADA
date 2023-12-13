@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ApiConsumoTaller.Models.Mecanico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Agrega los enlaces a los archivos CSS de Bootstrap -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<h1>Listado Mecanicos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear nuevo Mecanico</a>
+</p>
+
+<!-- Agrega la clase 'table' de Bootstrap a la tabla -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idMecanico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.domicilio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.especialidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sueldoBase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gratTitulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sueldoTotal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idMecanico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.domicilio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.especialidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sueldoBase)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gratTitulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sueldoTotal)
+                </td>
+                <td class="d-flex justify-content-end">
+                    <form asp-action="Edit" asp-route-id="@item.idMecanico" method="put">
+                        <button type="submit" class="btn btn-warning mr-2">Editar</button>
+                    </form>
+                    <form asp-action="Details" asp-route-id="@item.idMecanico" method="post">
+                        <button type="submit" class="btn btn-success mr-2">Detalles</button>
+                    </form>
+                    <form asp-action="Delete" asp-route-id="@item.idMecanico" method="delete">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Agrega los enlaces a los archivos JS de Bootstrap y jQuery (necesario para Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+

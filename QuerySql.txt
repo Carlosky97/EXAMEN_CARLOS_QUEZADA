@@ -1,0 +1,16 @@
+CREATE SCHEMA IF NOT EXISTS `Taller` DEFAULT CHARACTER SET utf8 ;
+Use Taller;
+
+CREATE TABLE IF NOT EXISTS `mecanico` (
+  `IdMecanico` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(50) NOT NULL,
+  `Edad` int NOT NULL,
+  `Domicilio` varchar(100) NOT NULL,
+  `Titulo` varchar(100) NOT NULL,
+  `Especialidad` varchar(100) NOT NULL,
+  `SueldoBase` int NOT NULL,
+  `GratTitulo` int NOT NULL,
+  `SueldoTotal` int NOT NULL,
+  PRIMARY KEY (`IdMecanico`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+COMMIT;
